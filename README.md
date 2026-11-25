@@ -10,6 +10,20 @@ and the moment a window resets, with one request in flight at a time; the panel 
 what the panel says: English, or Korean in a Korean Orca. Orca transpiles every file when it loads,
 so there is no build step: save, and the panel or the worker reloads.
 
+## What it looks like
+
+<p align="center">
+  <img src="docs/panel-ko.png" alt="The ZAI Usage panel in Orca's right sidebar, in Korean: the 5-hour window at 100% used with 1 hour until it resets, and the monthly tools at 1% (6 of 1000 calls)" width="330">
+</p>
+
+<p align="center">
+  <img src="docs/status-bar.png" alt="Orca's status bar showing the ZAI item in red: ZAI 100% · 1h 24m" width="210">
+</p>
+
+The panel asks for an API key until it has one, then draws one card per quota window. The status
+bar item names the window that runs out first and how long until it resets; here the five-hour
+window is spent, so it is red. English and Korean follow Orca's UI language.
+
 ## Set up
 
 1. Load the plugin (see [Develop](#develop)). Orca first shows the access it asks for: to run its
