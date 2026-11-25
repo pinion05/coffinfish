@@ -1,0 +1,80 @@
+{
+  "manifestVersion": 2,
+  "id": "zai-usage",
+  "name": "ZAI Usage",
+  "version": "0.1.0",
+  "description": "GLM Coding Plan usage and time until each limit resets, in the sidebar and the status bar.",
+  "author": {
+    "name": "pinion05"
+  },
+  "repository": "https://github.com/pinion05/coffinfish",
+  "engines": {
+    "orca": ">=1.4.248"
+  },
+  "execution": "trusted-worker",
+  "pluginApi": 1,
+  "main": "src/worker.ts",
+  "contributes": {
+    "panels": [
+      {
+        "id": "usage",
+        "title": "ZAI Usage",
+        "icon": "gauge",
+        "entry": "src/panel.tsx",
+        "ui": "components"
+      }
+    ],
+    "commands": [
+      {
+        "id": "zai-usage.refresh",
+        "title": "ZAI Usage: Refresh now",
+        "when": "global"
+      }
+    ],
+    "settings": [
+      {
+        "key": "region",
+        "title": "Region",
+        "description": "Which Z.AI platform your GLM Coding Plan is on.",
+        "type": "string",
+        "enum": ["global", "cn"],
+        "enumLabels": ["Z.AI (Global)", "BigModel (China)"],
+        "default": "global"
+      },
+      {
+        "key": "refreshMinutes",
+        "title": "Refresh every",
+        "description": "Minutes between reads of your usage.",
+        "type": "integer",
+        "default": 5,
+        "minimum": 1,
+        "maximum": 60
+      },
+      {
+        "key": "apiKey",
+        "title": "API key (fallback)",
+        "description": "Read only when no encrypted key is saved in the panel, and saved as plain text. For a device without an OS key store.",
+        "type": "string",
+        "default": "",
+        "placeholder": "Only without an OS key store"
+      }
+    ],
+    "statusBarItems": [
+      {
+        "id": "usage",
+        "icon": "gauge",
+        "text": "ZAI",
+        "tooltip": "ZAI Usage",
+        "command": "zai-usage.refresh"
+      }
+    ]
+  },
+  "capabilities": [
+    {
+      "kind": "settings:own"
+    },
+    {
+      "kind": "secrets:own"
+    }
+  ]
+}
