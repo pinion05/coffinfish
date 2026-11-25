@@ -231,15 +231,6 @@ test('saves the key where the panel asks it to, and forgets it', async () => {
   })
 })
 
-test('refreshes from the command palette', async () => {
-  await withWorker({ host: withKey() }, async (worker, calls) => {
-    await worker.request('usage.get')
-    assert.equal(calls.length, 1)
-    assert.match(String(await worker.command('zai-usage.refresh')), /^ZAI 15% · /)
-    assert.equal(calls.length, 2)
-  })
-})
-
 test('stops the request in flight when it is stopped, and asks nothing more', async () => {
   let started: (() => void) | undefined
   const inFlight = new Promise<void>((resolve) => {

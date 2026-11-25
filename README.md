@@ -28,8 +28,8 @@ the plugin's **API key (fallback)** setting in Orca Settings, which is saved as 
   has it, and the monthly tool calls with their per-tool counts. Each card has the share used, what
   was used of what, and when it resets: a countdown Orca keeps current, beside the exact local time.
 - A status bar item with the share used in the window that runs out first and how long until it
-  resets, such as `ZAI 47% · 2h 13m`. Hovering shows every window. Pressing it, or running
-  **ZAI Usage: Refresh now**, reads again at once. Its colour warns at 70% used and turns red at 90%.
+  resets, such as `ZAI 47% · 2h 13m`. Hovering shows every window, and the panel's refresh button
+  reads again at once. Its colour warns at 70% used and turns red at 90%.
 - When a read fails, the last good numbers stay on screen with the reason, and the status bar keeps
   them in a warning colour.
 

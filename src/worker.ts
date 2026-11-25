@@ -7,8 +7,7 @@ import type { OrcaWorkerApi } from 'orca/worker'
 import type { KeySource, KeyStatus, Region, Snapshot, UsageError, View } from './protocol'
 import { RequestError, fetchUsage, isDue, nextTickDelay, refreshMinutesOf, statusLine } from './zai'
 
-/** The manifest's ids: `contributes.commands` and `contributes.statusBarItems`. */
-const REFRESH_COMMAND = 'zai-usage.refresh'
+/** The manifest's status bar item. */
 const STATUS_BAR_ITEM = 'usage'
 
 /** Where the panel saves the key, in the plugin's encrypted secrets. */
@@ -244,10 +243,6 @@ export default function activate(orca: OrcaWorkerApi): void {
     await orca.secrets.delete(SECRET)
     await tick(true)
     return view()
-  })
-  orca.commands.register(REFRESH_COMMAND, async () => {
-    await tick(true)
-    return statusLine(view(), Date.now()).text
   })
   orca.settings.onDidChange(() => {
     // The region, the interval or the fallback key: read again with what is set now.

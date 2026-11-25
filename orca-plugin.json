@@ -2,7 +2,7 @@
   "manifestVersion": 2,
   "id": "zai-usage",
   "name": "ZAI Usage",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "GLM Coding Plan usage and time until each limit resets, in the sidebar and the status bar.",
   "author": {
     "name": "pinion05"
@@ -23,13 +23,6 @@
         "icon": "gauge",
         "entry": "src/panel.tsx",
         "ui": "components"
-      }
-    ],
-    "commands": [
-      {
-        "id": "zai-usage.refresh",
-        "title": "ZAI Usage: Refresh now",
-        "when": "global"
       }
     ],
     "settings": [
@@ -65,8 +58,7 @@
         "id": "usage",
         "icon": "gauge",
         "text": "ZAI",
-        "tooltip": "ZAI Usage",
-        "command": "zai-usage.refresh"
+        "tooltip": "ZAI Usage"
       }
     ]
   },
