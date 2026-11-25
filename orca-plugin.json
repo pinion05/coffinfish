@@ -2,12 +2,13 @@
   "manifestVersion": 2,
   "id": "zai-usage",
   "name": "ZAI Usage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "GLM Coding Plan usage and time until each limit resets, in the sidebar and the status bar.",
   "author": {
     "name": "pinion05"
   },
   "repository": "https://github.com/pinion05/coffinfish",
+  "license": "MIT",
   "engines": {
     "orca": ">=1.4.248"
   },
